@@ -11,7 +11,7 @@ class PostsNew extends Component {
           type="text"
           {...field.input}
         />
-        {field.meta.error}
+        {field.meta.touched ? field.meta.error : ''}
       </div>
     );
   }
@@ -56,7 +56,7 @@ function validate(values) {
   if (!values.categories) {
     errors.categories = 'Enter some categories';
   }
-  if (!values.categories) {
+  if (!values.content) {
     errors.content = 'Enter some content';
   }
 
